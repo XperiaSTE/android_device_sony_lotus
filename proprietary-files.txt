@@ -134,7 +134,6 @@ lib/libstagefright_yuv.so
 lib/libste_ens_audio_common.so
 lib/libstagefright_soft_flacenc.so
 lib/libmalutil.so
-lib/libblt_hw.so
 lib/libmcatcher.so
 lib/libstagefright_soft_mpeg4dec.so
 lib/libste_ens_image_common.so
