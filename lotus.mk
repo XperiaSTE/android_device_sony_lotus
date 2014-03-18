@@ -39,7 +39,7 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 # Configuration scripts
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/config/init.st-ericsson.device.rc:root/init.st-ericsson.device.rc \
-   device/sony/lotus/prebuilt/logo-320x480.rle:root/logo.rle
+   $(LOCAL_PATH)/prebuilt/logo-320x480.rle:root/logo.rle
 
 #charging animation
    $(call inherit-product, device/sony/lotus/prebuilt/resources-320x480.mk)
