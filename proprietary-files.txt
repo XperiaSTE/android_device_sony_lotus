@@ -156,7 +156,6 @@ lib/libstagefright_soft_aacdec.so
 lib/libstagefright_amrnb_common.so
 lib/libmalgss.so
 lib/libcameraservice.so
-lib/libbluedroid.so
 lib/libstagefright_soft_g711dec.so
 lib/libUMP.so
 lib/libnmftimer.so
