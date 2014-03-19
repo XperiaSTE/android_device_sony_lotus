@@ -12,11 +12,7 @@ TARGET_SPECIFIC_HEADER_PATH += device/sony/lotus/include
 
 # Kernel specific configuration
 TARGET_KERNEL_CONFIG := xperiago_defconfig
-BOARD_KERNEL_CMDLINE := cachepolicy=writealloc noinitrd init=init board_id=1 logo.nologo root=/dev/ram0 rw rootwait console=null androidboot.console=null androidboot.hardware=st-ericsson mem=96M@0 mem_mtrace=15M@96M mem_mshared=1M@111M mem_modem=16M@112M mem=32M@128M mem_issw=1M@160M hwmem=71M@161M mem=280M@232M
-
-
-# Specific recovery configuration
-BOARD_HAS_SDCARD_INTERNAL := true
+BOARD_KERNEL_CMDLINE := cachepolicy=writealloc noinitrd init=init board_id=1 root=/dev/ram0 rw rootwait console=ttyAMA2,115200n8 androidboot.console=ttyAMA2 androidboot.hardware=st-ericsson mem=96M@0 mem_mtrace=15M@96M mem_mshared=1M@111M mem_modem=16M@112M mem=32M@128M mem_issw=1M@160M hwmem=64M@161M mem=287M@225M mpcore_wdt.mpcore_margin=359
 
 
 # Specific flag for LED bar notification
