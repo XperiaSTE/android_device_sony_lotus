@@ -16,7 +16,7 @@ BOARD_KERNEL_CMDLINE := cachepolicy=writealloc noinitrd init=init board_id=1 roo
 
 
 # Specific flag for LED bar notification
-COMMON_GLOBAL_CFLAGS += -DNEW_NOTIFICATION -DSECOND_NOTIFICATION
+COMMON_GLOBAL_CFLAGS += -DNEW_NOTIFICATION
 
 
 # Device identifiers for updates

@@ -34,10 +34,9 @@ $(call inherit-product, device/sony/lotus/prebuilt/resources-320x480.mk)
 
 # Device specific recovery bootstrap scripts
 PRODUCT_COPY_FILES += \
- 	$(LOCAL_PATH)/config/bootrec-device:root/sbin/bootrec-device
+	$(LOCAL_PATH)/config/bootrec-device:root/sbin/bootrec-device
 
-
-# Device specific USB configuration script 
+# Device specific USB configuration script
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/config/init.st-ericsson.usb.rc:root/init.st-ericsson.usb.rc
 
 
@@ -52,8 +51,8 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/config/ux500-ske-keypad.kl:system/usr/keylayout/ux500-ske-keypad.kl \
 	$(LOCAL_PATH)/config/ux500-ske-keypad-qwertz.kl:system/usr/keylayout/ux500-ske-keypad-qwertz.kl \
 	$(LOCAL_PATH)/config/cyttsp-spi.idc:system/usr/idc/cyttsp-spi.idc \
-	$(LOCAL_PATH)/config/synaptics_rmi4_i2c.idc:system/usr/idc/synaptics_rmi4_i2c.idc \
-	$(LOCAL_PATH)/config/sensor00_f11_sensor0.idc:system/usr/idc/sensor00_f11_sensor0.idc
+	$(LOCAL_PATH)/config/sensor00_f11_sensor0.idc:system/usr/idc/sensor00_f11_sensor0.idc \
+	$(LOCAL_PATH)/config/synaptics_rmi4_i2c.idc:system/usr/idc/synaptics_rmi4_i2c.idc
 
 # Device specific display resolutions
 # Reference: http://developer.android.com/guide/practices/screens_support.html
