@@ -1,82 +1,62 @@
-# Copyright (C) 2014 Android Open Source Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
-# Inherit the proprietary counterpart
-$(call inherit-product-if-exists, vendor/sony/lotus/lotus-vendor.mk)
-
-DEVICE_PACKAGE_OVERLAYS += device/sony/lotus/overlay
-
-# Inherit the montblanc-common definitions
-$(call inherit-product, device/sony/montblanc-common/montblanc.mk)
-
-# The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_eu_supl.mk)
-
-# These are the hardware-specific features
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
-
-# This device is mdpi.  However the platform doesn't
-# currently contain all of the bitmaps at mdpi density so
-# we do this little trick to fall back to the mdpi version
-# if the mdpi doesn't exist.
-PRODUCT_AAPT_CONFIG := normal mdpi mdpi
-PRODUCT_AAPT_PREF_CONFIG := mdpi
-
-# Configuration scripts
-PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/config/init.st-ericsson.device.rc:root/init.st-ericsson.device.rc \
-   $(LOCAL_PATH)/prebuilt/logo-320x480.rle:root/logo.rle
-
-# Charging animation
-   $(call inherit-product, device/sony/lotus/prebuilt/resources-320x480.mk)
-
-# Configuration scripts
-PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/config/dash.conf:system/etc/dash.conf \
-   $(LOCAL_PATH)/prebuilt/hw_config.sh:system/etc/hw_config.sh
-
-# USB function switching
-PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/config/init.st-ericsson.usb.rc:root/init.st-ericsson.usb.rc
-
-PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml
-
-# Key layouts and touchscreen
-PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/config/AB8500_Hs_Button.kl:system/usr/keylayout/AB8500_Hs_Button.kl \
-   $(LOCAL_PATH)/config/simple_remote.kl:system/usr/keylayout/simple_remote.kl \
-   $(LOCAL_PATH)/config/simple_remote_appkey.kl:system/usr/keylayout/simple_remote_appkey.kl \
-   $(LOCAL_PATH)/config/cyttsp_key.kl:system/usr/keylayout/cyttsp_key.kl \
-   $(LOCAL_PATH)/config/STMPE-keypad.kl:system/usr/keylayout/STMPE-keypad.kl \
-   $(LOCAL_PATH)/config/tc3589x-keypad.kl:system/usr/keylayout/tc3589x-keypad.kl \
-   $(LOCAL_PATH)/config/ux500-ske-keypad.kl:system/usr/keylayout/ux500-ske-keypad.kl \
-   $(LOCAL_PATH)/config/ux500-ske-keypad-qwertz.kl:system/usr/keylayout/ux500-ske-keypad-qwertz.kl \
-   $(LOCAL_PATH)/config/cyttsp-spi.idc:system/usr/idc/cyttsp-spi.idc \
-   $(LOCAL_PATH)/config/synaptics_rmi4_i2c.idc:system/usr/idc/synaptics_rmi4_i2c.idc \
-   $(LOCAL_PATH)/config/sensor00_f11_sensor0.idc:system/usr/idc/sensor00_f11_sensor0.idc
-
-# Misc configuration files
-PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/config/cflashlib.cfg:system/etc/cflashlib.cfg \
-   $(LOCAL_PATH)/config/flashled_param_config.cfg:system/etc/flashled_param_config.cfg
-
+# Inherit from AOSP
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
+
+# Inherit from the common montblanc definitions
+$(call inherit-product, device/sony/montblanc-common/montblanc.mk)
+
+
+# Inherit from the device specific vendor definitions
 $(call inherit-product-if-exists, vendor/sony/lotus/lotus-vendor.mk)
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=160
+
+# Device specific settings overlays
+DEVICE_PACKAGE_OVERLAYS += device/sony/kumquat/overlay
+
+
+# Device specific configuration scripts
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/config/init.st-ericsson.device.rc:root/init.st-ericsson.device.rc \
+	$(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml
+
+
+# Device specific hardware configuration script    
+	$(LOCAL_PATH)/config/dash.conf:system/etc/dash.conf \
+	$(LOCAL_PATH)/prebuilt/hw_config.sh:system/etc/hw_config.sh \
+	$(LOCAL_PATH)/config/cflashlib.cfg:system/etc/cflashlib.cfg \
+	$(LOCAL_PATH)/config/flashled_param_config.cfg:system/etc/flashled_param_config.cfg
+
+
+# Device specific bootlogo and charging animation
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/logo-320x480.rle:root/logo.rle
+$(call inherit-product, device/sony/lotus/prebuilt/resources-320x480.mk)
+
+
+# Device specific recovery bootstrap scripts
+PRODUCT_COPY_FILES += \
+ 	$(LOCAL_PATH)/config/bootrec-device:root/sbin/bootrec-device
+
+
+# Device specific USB configuration script 
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/config/init.st-ericsson.usb.rc:root/init.st-ericsson.usb.rc
+
+
+# Device specific keylayouts and touchscreen configurations files
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/config/AB8500_Hs_Button.kl:system/usr/keylayout/AB8500_Hs_Button.kl \
+	$(LOCAL_PATH)/config/simple_remote.kl:system/usr/keylayout/simple_remote.kl \
+	$(LOCAL_PATH)/config/simple_remote_appkey.kl:system/usr/keylayout/simple_remote_appkey.kl \
+	$(LOCAL_PATH)/config/cyttsp_key.kl:system/usr/keylayout/cyttsp_key.kl \
+	$(LOCAL_PATH)/config/STMPE-keypad.kl:system/usr/keylayout/STMPE-keypad.kl \
+	$(LOCAL_PATH)/config/tc3589x-keypad.kl:system/usr/keylayout/tc3589x-keypad.kl \
+	$(LOCAL_PATH)/config/ux500-ske-keypad.kl:system/usr/keylayout/ux500-ske-keypad.kl \
+	$(LOCAL_PATH)/config/ux500-ske-keypad-qwertz.kl:system/usr/keylayout/ux500-ske-keypad-qwertz.kl \
+	$(LOCAL_PATH)/config/cyttsp-spi.idc:system/usr/idc/cyttsp-spi.idc \
+	$(LOCAL_PATH)/config/synaptics_rmi4_i2c.idc:system/usr/idc/synaptics_rmi4_i2c.idc \
+	$(LOCAL_PATH)/config/sensor00_f11_sensor0.idc:system/usr/idc/sensor00_f11_sensor0.idc
+
+# Device specific display resolutions
+# Reference: http://developer.android.com/guide/practices/screens_support.html
+# Note: In PRODUCT_AAPT_PREF_CONFIG set the proper one (e.g. hdpi), in PRODUCT_AAPT_CONFIG set the proper one and the previous one (e.g. mdpi)
+PRODUCT_AAPT_PREF_CONFIG := mdpi
+PRODUCT_AAPT_CONFIG := normal mdpi mdpi
