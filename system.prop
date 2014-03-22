@@ -64,5 +64,5 @@ ro.sound.driver=alsa
 ro.hwui.texture_cache_size=10
 ro.hwui.layer_cache_size=10
 ro.hwui.path_cache_size=2
-ro.sf.lcd_density=160
+ro.sf.lcd_density=165
 ro.config.low_ram=true
