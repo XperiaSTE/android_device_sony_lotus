@@ -11,7 +11,7 @@ $(call inherit-product-if-exists, vendor/sony/lotus/lotus-vendor.mk)
 
 
 # Device specific settings overlays
-DEVICE_PACKAGE_OVERLAYS += device/sony/kumquat/overlay
+DEVICE_PACKAGE_OVERLAYS += device/sony/lotus/overlay
 
 
 # Device specific configuration scripts
