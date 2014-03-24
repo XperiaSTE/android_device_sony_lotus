@@ -15,8 +15,6 @@ debug.sf.hw=1
 
 # EGL miscellaneous
 ro.zygote.disable_gl_preload=true
-# the ro.bq.gpu_to_cpu_unsupported is not needed for us
-#ro.bq.gpu_to_cpu_unsupported=true
 debug.hwui.render_dirty_regions=false
 hwui.render_dirty_regions=false
 
