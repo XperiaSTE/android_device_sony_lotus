@@ -32,9 +32,9 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/logo-320x480.rle:root/logo.rle
 $(call inherit-product, device/sony/lotus/prebuilt/resources-320x480.mk)
 
 
-# Device specific recovery bootstrap scripts
+# Device specific part for two-stage boot
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/config/bootrec-device:root/sbin/bootrec-device
+	$(LOCAL_PATH)/config/bootrec-device:recovery/bootrec-device
 
 # Device specific USB configuration script
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/config/init.st-ericsson.usb.rc:root/init.st-ericsson.usb.rc
