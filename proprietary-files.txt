@@ -1,3 +1,4 @@
+bin/at_core
 bin/blue-up.sh
 bin/cg2900-channel_init.sh
 bin/chargemon
@@ -38,12 +39,12 @@ etc/bluetooth/input.conf
 etc/bluetooth/main.conf
 etc/bluetooth/network.conf
 etc/bluetooth/qos_role_switch_blacklist.conf
-etc/firmware/CG29XX_0200_0000_patch.fw
-etc/firmware/CG29XX_0200_0000_settings.fw
 etc/firmware/cg2900_fm_bt_src_coeff_info.fw
 etc/firmware/cg2900_fm_ext_src_coeff_info.fw
 etc/firmware/cg2900_fm_fm_coeff_info.fw
 etc/firmware/cg2900_fm_fm_prog_info.fw
+etc/firmware/CG29XX_0200_0000_patch.fw
+etc/firmware/CG29XX_0200_0000_settings.fw
 etc/firmware/FM_FW_CG2910_1_0_P1_4_lut.fw
 etc/firmware/FM_FW_CG2910_1_0_P1_4_lut_info.fw
 etc/firmware/FM_FW_CG2910_1_0_P1_4_prog.fw
@@ -457,10 +458,10 @@ usr/share/nmf/repository/mmdsp_8500_v2/_st/vc1dec/mpc/api/end_algo.elf4nmf
 usr/share/nmf/repository/mmdsp_8500_v2/_st/vc1dec/mpc/ddep/api/end_codec.elf4nmf
 usr/share/nmf/repository/mmdsp_8500_v2/_st/vpp/mpc/api/end_algo.elf4nmf
 usr/share/nmf/repository/mmdsp_8500_v2/amr/codec/libamrcommon.elf4nmf
-usr/share/nmf/repository/mmdsp_8500_v2/amr/codec/libamrdec24.elf4nmf
 usr/share/nmf/repository/mmdsp_8500_v2/amr/codec/libamrdec.elf4nmf
-usr/share/nmf/repository/mmdsp_8500_v2/amr/codec/libamrenc24.elf4nmf
+usr/share/nmf/repository/mmdsp_8500_v2/amr/codec/libamrdec24.elf4nmf
 usr/share/nmf/repository/mmdsp_8500_v2/amr/codec/libamrenc.elf4nmf
+usr/share/nmf/repository/mmdsp_8500_v2/amr/codec/libamrenc24.elf4nmf
 usr/share/nmf/repository/mmdsp_8500_v2/amr/nmfil/decoder.elf4nmf
 usr/share/nmf/repository/mmdsp_8500_v2/amr/nmfil/encoder.elf4nmf
 usr/share/nmf/repository/mmdsp_8500_v2/audiocodec/mpc/capturercontroller.elf4nmf
