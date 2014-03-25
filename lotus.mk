@@ -31,6 +31,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/logo-320x480.rle:root/logo.rle
 $(call inherit-product, device/sony/lotus/prebuilt/resources-320x480.mk)
 
+#TWRP
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Device specific part for two-stage boot
 PRODUCT_COPY_FILES += \
