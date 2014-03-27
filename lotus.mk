@@ -31,13 +31,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/logo-320x480.rle:root/logo.rle
 $(call inherit-product, device/sony/lotus/prebuilt/resources-320x480.mk)
 
+# Device specific headers
+TARGET_SPECIFIC_HEADER_PATH += device/sony/lotus/include
+
 #TWRP
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/twrp.fstab:recovery/root/etc/twrp.fstab
-
-# Device specific part for two-stage boot
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/config/bootrec-device:recovery/bootrec-device
 
 # Device specific USB configuration script
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/config/init.st-ericsson.usb.rc:root/init.st-ericsson.usb.rc
