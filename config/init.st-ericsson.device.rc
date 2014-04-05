@@ -1,3 +1,16 @@
+on early-init
+    # external storage directory
+    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
+    
+    # fuse storage directories
+    mkdir /storage/sdcard1 0700 root root
+    
+    export SECONDARY_STORAGE /storage/sdcard1
+    
+    # for backwards compatibility
+    symlink /storage/sdcard1 /external_sd
+    symlink /storage/sdcard1 /mnt/external_sd
+
 on boot
     # Permissions for Liblights.
     chown system system /sys/class/leds/red/use_pattern
@@ -11,3 +24,6 @@ on boot
     chown system system /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/pattern_use_softdim
     chown system system /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/dim_time
 
+service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1 
+    class late_start
+    disabled
