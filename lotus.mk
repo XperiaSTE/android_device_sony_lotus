@@ -28,7 +28,9 @@ PRODUCT_COPY_FILES += \
 
 
 # Device specific bootlogo and charging animation
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/logo-320x480.rle:root/logo.rle
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/prebuilt/logo-320x480.rle:root/logo.rle \
+	$(LOCAL_PATH)/prebuilt/bootanimation.zip:system/media/bootanimation.zip
 $(call inherit-product, device/sony/lotus/prebuilt/resources-320x480.mk)
 
 # Device specific headers
