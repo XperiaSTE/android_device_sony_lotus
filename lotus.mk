@@ -20,7 +20,8 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml
 
 
-# Device specific hardware configuration script    
+# Device specific hardware configuration script 
+PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/config/dash.conf:system/etc/dash.conf \
 	$(LOCAL_PATH)/prebuilt/hw_config.sh:system/etc/hw_config.sh \
 	$(LOCAL_PATH)/config/cflashlib.cfg:system/etc/cflashlib.cfg \
