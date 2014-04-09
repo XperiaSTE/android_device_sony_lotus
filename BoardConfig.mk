@@ -25,3 +25,4 @@ TARGET_OTA_ASSERT_DEVICE := ST27i,ST27a,lotus
 DEVICE_RESOLUTION := 320x480
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+TARGET_RECOVERY_FSTAB := device/sony/lotus/config/fstab.st-ericsson
