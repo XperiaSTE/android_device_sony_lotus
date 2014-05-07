@@ -1,4 +1,4 @@
-$(call inherit-product, device/sony/pepper/full_pepper.mk)
+$(call inherit-product, device/sony/lotus/full_lotus.mk)
 
 # Inherit CM common GSM stuff.
 $(call inherit-product, vendor/cm/config/gsm.mk)
