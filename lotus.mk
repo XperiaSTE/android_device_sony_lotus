@@ -1,4 +1,19 @@
-# Inherit from AOSP
+#
+# Copyright (C) 2014 Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 
@@ -31,16 +46,16 @@ PRODUCT_COPY_FILES += \
 
 # Device specific bootlogo and charging animation
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/prebuilt/logo-320x480.rle:root/logo.rle \
-	$(LOCAL_PATH)/prebuilt/bootanimation.zip:system/media/bootanimation.zip
+	$(LOCAL_PATH)/prebuilt/logo-320x480.rle:root/logo.rle
+
 $(call inherit-product, device/sony/lotus/prebuilt/resources-320x480.mk)
 
 # Device specific headers
 TARGET_SPECIFIC_HEADER_PATH += device/sony/lotus/include
 
-#TWRP
+# Bootanimation
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/twrp.fstab:recovery/root/etc/twrp.fstab
+        $(LOCAL_PATH)/../../../vendor/cm/prebuilt/common/bootanimation/320.zip:system/media/bootanimation.zip
 
 # Device specific USB configuration script
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/config/init.st-ericsson.usb.rc:root/init.st-ericsson.usb.rc
