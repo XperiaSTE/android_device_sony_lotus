@@ -57,6 +57,10 @@ TARGET_SPECIFIC_HEADER_PATH += device/sony/lotus/include
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/../../../vendor/cm/prebuilt/common/bootanimation/320.zip:system/media/bootanimation.zip
 
+# TWRP
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/config/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # Device specific USB configuration script
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/config/init.st-ericsson.usb.rc:root/init.st-ericsson.usb.rc
 
