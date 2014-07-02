@@ -112,9 +112,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.sf.lcd_density=160 \
   ro.config.low_ram=true
 
-# OTA Updater
-PRODUCT_PROPERTY_OVERRIDES += otaupdater.otaid=buildid
-PRODUCT_PROPERTY_OVERRIDES += otaupdater.otaver=buildver
-PRODUCT_PROPERTY_OVERRIDES += otaupdater.otatime=buildtime
-PRODUCT_PACKAGES += OTAUpdater
-
+# OpenDelta
+PRODUCT_PROPERTY_OVERRIDES += ro.delta.version=1.0
+PRODUCT_PROPERTY_OVERRIDES += ro.delta.device=lotus
+PRODUCT_PACKAGES += OpenDelta
