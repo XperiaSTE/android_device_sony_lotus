@@ -111,8 +111,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.hwui.path_cache_size=1 \
   ro.sf.lcd_density=160 \
   ro.config.low_ram=true
-
-# OpenDelta
-PRODUCT_PROPERTY_OVERRIDES += ro.delta.version=1.0
-PRODUCT_PROPERTY_OVERRIDES += ro.delta.device=lotus
-PRODUCT_PACKAGES += OpenDelta
