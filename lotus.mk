@@ -39,7 +39,7 @@ PRODUCT_COPY_FILES += \
 # Device specific hardware configuration script 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/config/dash.conf:system/etc/dash.conf \
-	$(LOCAL_PATH)/prebuilt/hw_config.sh:system/etc/hw_config.sh \
+	$(LOCAL_PATH)/config/hw_config.sh:system/etc/hw_config.sh \
 	$(LOCAL_PATH)/config/cflashlib.cfg:system/etc/cflashlib.cfg \
 	$(LOCAL_PATH)/config/flashled_param_config.cfg:system/etc/flashled_param_config.cfg
 
