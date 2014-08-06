@@ -53,10 +53,6 @@ $(call inherit-product, device/sony/lotus/prebuilt/resources-320x480.mk)
 # Device specific headers
 TARGET_SPECIFIC_HEADER_PATH += device/sony/lotus/include
 
-# Bootanimation
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/../../../vendor/cm/prebuilt/common/bootanimation/320.zip:system/media/bootanimation.zip
-
 # TWRP
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/config/twrp.fstab:recovery/root/etc/twrp.fstab

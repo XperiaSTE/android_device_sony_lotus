@@ -20,6 +20,8 @@ TARGET_KERNEL_CONFIG := xperiago_defconfig
 # Specific flag for LED bar notification
 COMMON_GLOBAL_CFLAGS += -DNEW_NOTIFICATION
 
+# Device bootlogo
+TARGET_BOOTANIMATION_NAME := vertical-320x480
 
 # Device identifiers for updates
 TARGET_OTA_ASSERT_DEVICE := ST27i,ST27a,lotus
