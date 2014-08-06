@@ -16,18 +16,14 @@
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
-
 # Inherit from the common montblanc definitions
 $(call inherit-product, device/sony/montblanc-common/montblanc.mk)
-
 
 # Inherit from the device specific vendor definitions
 $(call inherit-product-if-exists, vendor/sony/lotus/lotus-vendor.mk)
 
-
 # Device specific settings overlays
 DEVICE_PACKAGE_OVERLAYS += device/sony/lotus/overlay
-
 
 # Device specific configuration scripts
 PRODUCT_COPY_FILES += \
