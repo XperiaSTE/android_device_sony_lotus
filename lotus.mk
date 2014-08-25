@@ -81,6 +81,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_AAPT_CONFIG := normal mdpi mdpi
 
+# Barometar permissions
+PRODUCT_COPY_FILES += \
+   frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml
 
 # Android kind of memory
 PRODUCT_PROPERTY_OVERRIDES += ro.build.characteristics=nosdcard
