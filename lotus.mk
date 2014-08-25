@@ -81,7 +81,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_AAPT_CONFIG := normal mdpi mdpi
 
-# Barometar permissions
+# Barometer permissions
 PRODUCT_COPY_FILES += \
    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml
 
@@ -114,3 +114,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.hwui.path_cache_size=1 \
   ro.sf.lcd_density=160 \
   ro.config.low_ram=true
+
+#Kernel modules
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/prebuilt/modules/bnep.ko:system/lib/modules/bnep.ko \
+   $(LOCAL_PATH)/prebuilt/modules/cifs.ko:system/lib/modules/cifs.ko \
+   $(LOCAL_PATH)/prebuilt/modules/cw1200_core.ko:system/lib/modules/cw1200_core.ko \
+   $(LOCAL_PATH)/prebuilt/modules/cw1200_wlan.ko:system/lib/modules/cw1200_wlan.ko \
+   $(LOCAL_PATH)/prebuilt/modules/frandom.ko:system/lib/modules/frandom.ko \
+   $(LOCAL_PATH)/prebuilt/modules/mmc_test.ko:system/lib/modules/mmc_test.ko \
+   $(LOCAL_PATH)/prebuilt/modules/nls_utf8.ko:system/lib/modules/nls_utf8.ko \
+   $(LOCAL_PATH)/prebuilt/modules/oprofile.ko:system/lib/modules/oprofile.ko \
+   $(LOCAL_PATH)/prebuilt/modules/pwr.ko:system/lib/modules/pwr.ko \
+   $(LOCAL_PATH)/prebuilt/modules/rng-core.ko:system/lib/modules/rng-core.ko \
+   $(LOCAL_PATH)/prebuilt/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
+   $(LOCAL_PATH)/prebuilt/modules/tun.ko:system/lib/modules/tun.k
