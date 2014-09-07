@@ -16,18 +16,14 @@
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
-
 # Inherit from the common montblanc definitions
 $(call inherit-product, device/sony/montblanc-common/montblanc.mk)
-
 
 # Inherit from the device specific vendor definitions
 $(call inherit-product-if-exists, vendor/sony/lotus/lotus-vendor.mk)
 
-
 # Device specific settings overlays
 DEVICE_PACKAGE_OVERLAYS += device/sony/lotus/overlay
-
 
 # Device specific configuration scripts
 PRODUCT_COPY_FILES += \
@@ -39,7 +35,7 @@ PRODUCT_COPY_FILES += \
 # Device specific hardware configuration script 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/config/dash.conf:system/etc/dash.conf \
-	$(LOCAL_PATH)/prebuilt/hw_config.sh:system/etc/hw_config.sh \
+	$(LOCAL_PATH)/config/hw_config.sh:system/etc/hw_config.sh \
 	$(LOCAL_PATH)/config/cflashlib.cfg:system/etc/cflashlib.cfg \
 	$(LOCAL_PATH)/config/flashled_param_config.cfg:system/etc/flashled_param_config.cfg
 
@@ -52,10 +48,6 @@ $(call inherit-product, device/sony/lotus/prebuilt/resources-320x480.mk)
 
 # Device specific headers
 TARGET_SPECIFIC_HEADER_PATH += device/sony/lotus/include
-
-# Bootanimation
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/../../../vendor/cm/prebuilt/common/bootanimation/320.zip:system/media/bootanimation.zip
 
 # TWRP
 PRODUCT_COPY_FILES += \
