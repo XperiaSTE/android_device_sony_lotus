@@ -1,6 +1,3 @@
-# Architecture
-TARGET_ARCH_LOWMEM := true
-
 # Inherit from the proprietary version
 -include vendor/sony/lotus/BoardConfigVendor.mk
 
