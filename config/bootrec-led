@@ -1,45 +1,44 @@
 #!/sbin/busybox sh
 
-# triget button-backlight
-busybox echo '255' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/button-backlight/brightness
-
-# trigger white, red, orange, yellow, green, blue, purple LED :)
-busybox echo '255' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/red/brightness
-busybox echo '255' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/green/brightness
-busybox echo '255' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/blue/brightness
-busybox usleep 300000
-busybox echo '255' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/red/brightness
-busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/green/brightness
-busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/blue/brightness
-busybox usleep 300000
-busybox echo '255' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/red/brightness
-busybox echo '50' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/green/brightness
-busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/blue/brightness
-busybox usleep 300000
-busybox echo '255' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/red/brightness
-busybox echo '255' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/green/brightness
-busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/blue/brightness
-busybox usleep 300000
-busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/red/brightness
-busybox echo '255' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/green/brightness
-busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/blue/brightness
-busybox usleep 300000
+# Reset LEDs
 busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/red/brightness
 busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/green/brightness
-busybox echo '255' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/blue/brightness
-busybox usleep 300000
-busybox echo '255' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/red/brightness
-busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/green/brightness
-busybox echo '255' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/blue/brightness
-busybox usleep 300000
-
-# trigger vibration
-busybox echo '200' > /sys/class/timed_output/vibrator/enable
-
-# disable button-backlight
+busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/blue/brightness
 busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/button-backlight/brightness
 
-# disable LEDs
-busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/red/brightness
-busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/green/brightness
-busybox echo '0' > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/blue/brightness
+# In animaton
+b=0
+
+for i in $(/sbin/busybox seq 0 3 255)
+do
+    busybox echo $i > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/red/brightness
+    busybox echo $b > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/button-backlight/brightness
+    b=$(($b + 1))
+    
+done 
+
+for i in $(/sbin/busybox seq 0 3 255)
+do
+    busybox echo $i > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/green/brightness
+    busybox echo $b > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/button-backlight/brightness
+    b=$(($b + 1))
+done
+
+for i in $(/sbin/busybox seq 0 3 255)
+do
+    j=$((255 - $i))
+    busybox echo $j > sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/red/brightness
+    busybox echo $b > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/button-backlight/brightness
+    b=$(($b + 1))
+done 
+
+# Trigger vibration
+busybox echo '50' > /sys/class/timed_output/vibrator/enable
+
+# Out animaton
+for i in $(/sbin/busybox seq 0 255)
+do
+    j=$((255 - $i))    
+    busybox echo $j > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/green/brightness
+    busybox echo $j > /sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/button-backlight/brightness
+done
