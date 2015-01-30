@@ -12,6 +12,8 @@ TARGET_SPECIFIC_HEADER_PATH += device/sony/lotus/include
 
 # Kernel specific configuration
 TARGET_KERNEL_CONFIG := xperiago_defconfig
+BOARD_CUSTOM_BOOTIMG := true
+TARGET_NO_SEPARATE_RECOVERY := true
 
 
 # Specific flag for LED bar notification
