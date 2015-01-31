@@ -28,3 +28,4 @@ DEVICE_RESOLUTION := 320x480
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TARGET_RECOVERY_FSTAB := device/sony/lotus/config/fstab.st-ericsson
+BOARD_USE_CUSTOM_RECOVERY_FONT :=\"font_7x16.h\"
