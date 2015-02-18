@@ -4,6 +4,9 @@
 # Inherit from the common montblanc definitions
 -include device/sony/montblanc-common/BoardConfigCommon.mk
 
+# Enable non PIE support
+TARGET_ENABLE_NON_PIE_SUPPORT := true
+
 # Platform specific headers
 TARGET_SPECIFIC_HEADER_PATH += device/sony/lotus/include
 
