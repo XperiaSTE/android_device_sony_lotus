@@ -86,7 +86,7 @@ PRODUCT_COPY_FILES += \
    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml
 
 # Android kind of memory
-PRODUCT_PROPERTY_OVERRIDES += ro.build.characteristics=nosdcard
+PRODUCT_CHARACTERISTICS := nosdcard
 
 
 # PC Companion kind of memory
