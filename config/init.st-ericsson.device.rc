@@ -1,4 +1,4 @@
-on early-init
+on init
     # external storage directory
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     
