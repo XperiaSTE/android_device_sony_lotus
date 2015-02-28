@@ -106,6 +106,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.sys.fw.bg_apps_limit=16
 
+# Set max background services
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.config.max_starting_bg=8
+
 # Disable JIT code cache to free up some ram when the device is running
 PRODUCT_PROPERTY_OVERRIDES += \
   dalvik.vm.jit.codecachesize=0
