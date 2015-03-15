@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2011 Google Inc.
+All Rights Reserved. -->
+<resources>
+    <!-- QuickMessage -->
+    <dimen name="qm_message_height">180dp</dimen>
+    <dimen name="qm_dialog_button_bar_height">40dip</dimen>
+</resources>
