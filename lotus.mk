@@ -115,6 +115,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
   dalvik.vm.jit.codecachesize=0
 
+# Disable atlas service on low-ram devices
+PRODUCT_PROPERTY_OVERRIDES += \
+  config.disable_atlas=true
+
 # Device specific proprieties
 # References: 
 # - http://source.android.com/devices/tuning.html
