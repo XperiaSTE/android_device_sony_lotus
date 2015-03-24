@@ -180,7 +180,7 @@
     <dimen name="config_viewConfigurationTouchSlop">4dp</dimen>
 
     <!-- Maximum number of supported users -->
-    <integer name="config_multiuserMaximumUsers">3</integer>
+    <integer name="config_multiuserMaximumUsers">4</integer>
 
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
