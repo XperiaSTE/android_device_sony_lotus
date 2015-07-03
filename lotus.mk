@@ -1,6 +1,3 @@
- # Inherit from AOSP
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
-
 # Inherit from the common montblanc definitions
 $(call inherit-product, device/sony/montblanc-common/montblanc.mk)
 
@@ -67,6 +64,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Device density
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sf.lcd_density=160
+
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=5m \
+    dalvik.vm.heapgrowthlimit=48m \
+    dalvik.vm.heapsize=128m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=1m \
+    dalvik.vm.heapmaxfree=2m
 
 # Low-RAM optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
