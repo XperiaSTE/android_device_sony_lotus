@@ -42,8 +42,9 @@ PRODUCT_COPY_FILES += \
 # Device specific display resolutions
 # Reference: http://developer.android.com/guide/practices/screens_support.html
 # Note: In PRODUCT_AAPT_PREF_CONFIG set the proper one (e.g. hdpi), in PRODUCT_AAPT_CONFIG set the proper one and the previous one (e.g. mdpi)
-PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := mdpi
+PRODUCT_AAPT_PREBUILT_DPI := mdpi
 
 # Barometer permissions
 PRODUCT_COPY_FILES += \
