@@ -26,6 +26,6 @@
     <bool name="config_show_onscreen_dial_button">true</bool>
 
     <!-- Flag indicating if the phone is a world phone -->
-    <bool name="world_phone">true</bool>
+    <!--<bool name="world_phone">true</bool>-->
 
 </resources>
